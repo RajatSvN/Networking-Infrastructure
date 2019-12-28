@@ -9,7 +9,7 @@ Parameters:
         Type: String
         Default: 10.0.0.0/16
 Resources:
-     VPC: 
+    VPC: 
         Type: AWS::EC2::VPC
         Properties:
             CidrBlock: !Ref VpcCIDR
@@ -17,15 +17,15 @@ Resources:
             Tags: 
                 - Key: Name 
                   Value: !Ref EnvironmentName
-
-      InternetGateway:
+                  
+    InternetGateway:
         Type: AWS::EC2::InternetGateway
         Properties:
             Tags:
                 - Key: Name
                   Value: !Ref EnvironmentName
             
-      InternetGatewayAttachment:
+    InternetGatewayAttachment:
           Type: AWS::EC2::VPCGatewayAttachment
           Properties:
               InternetGatewayId: !Ref InternetGateway
